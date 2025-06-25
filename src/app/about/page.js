@@ -19,7 +19,7 @@ export default function About () {
                 trustText="No contract. No commitment. Just contribute what you can."
             />
 
-            <div className="w-[55%] flex flex-col">
+            <div className="lg:w-[55%] w-full flex flex-col">
                 <h2 className="text-3xl font-semibold mb-8">Our Mission</h2>
                 <p className="mb-10 text-lg leading-relaxed">
                     At No Time For News, our mission is to make the news more approachable and engaging for everyone by breaking down complex stories and big issues into clear, engaging summaries. 
