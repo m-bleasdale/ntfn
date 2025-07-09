@@ -24,7 +24,7 @@ export default function Analytics () {
         cookieBot.id = 'Cookiebot';
         cookieBot.src = 'https://consent.cookiebot.com/uc.js';
         cookieBot.type = 'text/javascript';
-        cookieBot.setAttribute('data-cbid', '[redacted]');
+        cookieBot.setAttribute('data-cbid', 'd368d88e-41e7-4efe-ac83-8dd9b3ffcc2e');
         cookieBot.async = true;
         document.head.appendChild(cookieBot);
     }, []);
