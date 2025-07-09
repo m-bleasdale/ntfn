@@ -1,3 +1,4 @@
+import { Community } from "@/components/community";
 import { Footer } from "@/components/footer";
 import Header from "@/components/header"
 import Hero from "@/components/hero"
@@ -11,16 +12,14 @@ export default function Contact () {
             <Header />
 
             <div className="lg:w-[55%] w-full flex flex-col">
-                <h1 className="text-center mt-20 mb-20 text-6xl">Contact Us</h1>
+                <h1 className="text-center mt-20 mb-20 text-6xl font-semibold">Contact Us</h1>
             </div>
 
-            <div className="lg:w-[55%] w-full flex flex-col">
-                <div className="mb-20 flex lg:flex-row flex-col justify-between">
-                    <p className="text-lg leading-relaxed">Email: <span className="font-semibold">contact@ntfn.com</span></p>
-                    <p className="text-lg leading-relaxed">Instagram: <a href="https://www.instagram.com/ntfn.co.uk/" className="text-blue-600 underline">@ntfn.co.uk</a></p>
-                    <p className="text-lg leading-relaxed">TikTok: <a href="https://www.tiktok.com/@ntfn.co.uk" className="text-blue-600 underline">@ntfn.co.uk</a></p>
-                </div>
+            <div className="lg:w-[55%] w-full flex justify-center">
+                <p className="text-center text-2xl">contact@ntfn.com</p>
             </div>
+
+            <Community />
 
             <Footer />
 
