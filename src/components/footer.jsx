@@ -29,6 +29,7 @@ const Footer = ({
       links: [
         { text: "Instagram", url: "https://www.instagram.com/ntfn.co.uk/" },
         { text: "TikTok", url: "https://www.tiktok.com/@ntfn.co.uk" },
+        { text: "X", url: "https://x.com/ntfn_"}
       ],
     },
   ],

@@ -25,7 +25,7 @@ export default async function Page({ params }) {
 
                     <Sidebar title={frontmatter.title} description={frontmatter.description} category={frontmatter.category} author={frontmatter.author}/>
                 
-                    <div className="flex w-full flex-col items-center pb-20 lg:gap-12 gap-8 w-full sm:px-20 md:col-span-6 md:col-start-3 lg:col-start-3">
+                    <div className="flex w-full flex-col items-center lg:gap-12 lg:pb-20 gap-8 w-full sm:px-20 md:col-span-6 md:col-start-3 lg:col-start-3">
                         {frontmatter.notice && <Notice code={frontmatter.notice} />}
 
                         <div className='flex flex-col w-full gap-5'>
