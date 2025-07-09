@@ -66,7 +66,7 @@ const Footer = ({
                     key={linkIdx}
                     className="font-medium hover:text-primary"
                     >
-                    <a href={link.url}>{link.text}</a>
+                    <a href={link.url} target="_blank" rel="noopener noreferrer">{link.text}</a>
                     </li>
                 ))}
                 </ul>

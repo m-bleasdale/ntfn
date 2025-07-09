@@ -20,6 +20,7 @@ const Community = () => {
               <a
                 href="https://x.com/ntfn_"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="size-10"
               >
                 <FaXTwitter />
@@ -29,6 +30,7 @@ const Community = () => {
               <a
                 href="https://www.instagram.com/ntfn.co.uk/"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="size-10"
               >
                 <FaInstagram />
@@ -38,6 +40,7 @@ const Community = () => {
               <a
                 href="https://www.tiktok.com/@ntfn.co.uk"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="size-10"
               >
                 <FaTiktok />
