@@ -21,11 +21,11 @@ export default async function Page({ params }) {
             <div className="flex flex-col items-center min-h-screen pb-20 lg:gap-12 gap-8 p-8 sm:px-20 font-[family-name:var(--font-geist-sans)]">
                 <Header />
 
-                <div className="container grid gap-12 md:grid-cols-10 md:gap-8">
+                <div className="container flex flex-col md:grid gap-12 md:grid-cols-10 md:gap-8">
 
                     <Sidebar title={frontmatter.title} description={frontmatter.description} category={frontmatter.category} author={frontmatter.author}/>
                 
-                    <div className="flex w-full flex-col items-center pb-20 lg:gap-12 gap-8 sm:px-20 md:col-span-6 md:col-start-3 lg:col-start-3">
+                    <div className="flex w-full flex-col items-center pb-20 lg:gap-12 gap-8 w-full sm:px-20 md:col-span-6 md:col-start-3 lg:col-start-3">
                         {frontmatter.notice && <Notice code={frontmatter.notice} />}
 
                         <div className='flex flex-col w-full gap-5'>
@@ -43,26 +43,24 @@ export default async function Page({ params }) {
                             <div>
                                 <MDXProvider source={mdxSource} />
                             </div>
-                            <div className="flex flex-col">
+                            <div className="flex flex-col w-full">
                                 <h2 id="Bibliography" className="text-4xl font-semibold my-10">Bibliography</h2>
-                                <ul>
-                                    {frontmatter.references.map((ref, index) => (
-                                        <li key={index} className='flex items-start gap-2 mb-2'>
-                                            <span className='font-semibold'>[{index + 1}]</span>
-                                            <span>
-                                                {ref[0]}{" "}
-                                                <a 
-                                                    href={ref[1]} 
-                                                    className='underline text-blue-800'
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                >
-                                                    {ref[1]}
-                                                </a>
-                                            </span>
-                                        </li>
-                                    ))}
-                                </ul>
+                                {frontmatter.references.map((ref, index) => (
+                                    <p key={index} className='flex items-start gap-2 mb-2'>
+                                        <span className='font-semibold'>[{index + 1}]</span>
+                                        <span className=''>
+                                            {ref[0]}{" "}
+                                            <a 
+                                                href={ref[1]} 
+                                                className='underline text-blue-800 break-all'
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                {ref[1]}
+                                            </a>
+                                        </span>
+                                    </p>
+                                ))}
                             </div>
                         </div>
                     </div>
