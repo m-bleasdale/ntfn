@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const Community = () => {
   return (
-    <section className="py-20">
+    <section>
       <div className="container">
         <div className="flex flex-col items-center gap-5">
           <img src="/FaviconTrans.png" alt="logo" className="size-20" />
