@@ -29,9 +29,9 @@ export default function Header ({
     title: "No Time For News"
   },
   categories = [
-    { title: "UK Politics", url: "#" },
-    { title: "World Politics", url: "#" },
-    { title: "Conflicts", url: "#" },
+    { title: "UK Politics", url: "/" },
+    { title: "World Politics", url: "/" },
+    { title: "Conflicts", url: "/" },
   ],
   menu = [
     {

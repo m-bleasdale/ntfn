@@ -5,6 +5,7 @@ import Header from '@/components/header';
 import ImageWrapper from '@/components/image-wrapper'
 import Notice from '@/components/notice';
 import Sidebar from "@/components/sidebar";
+import { Footer } from '@/components/footer';
 
 export default async function Page({ params }) {
     const { slug } = await params;
@@ -38,16 +39,37 @@ export default async function Page({ params }) {
                                 <img src={frontmatter.cover} alt={frontmatter.cover_alt} className='rounded-lg lg:h-100 h-65 w-full object-cover hover:cursor-pointer'/>
                             </ImageWrapper>
                         </div>
-                        <div className="flex flex-col w-full gap-10">
+                        <div className="flex flex-col w-full">
                             <div>
                                 <MDXProvider source={mdxSource} />
+                            </div>
+                            <div className="flex flex-col">
+                                <h2 id="Bibliography" className="text-4xl font-semibold my-10">Bibliography</h2>
+                                <ul>
+                                    {frontmatter.references.map((ref, index) => (
+                                        <li key={index} className='flex items-start gap-2 mb-2'>
+                                            <span className='font-semibold'>[{index + 1}]</span>
+                                            <span>
+                                                {ref[0]}{" "}
+                                                <a 
+                                                    href={ref[1]} 
+                                                    className='underline text-blue-800'
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                >
+                                                    {ref[1]}
+                                                </a>
+                                            </span>
+                                        </li>
+                                    ))}
+                                </ul>
                             </div>
                         </div>
                     </div>
 
                 </div>
 
-
+                <Footer />
             </div>
 
         )

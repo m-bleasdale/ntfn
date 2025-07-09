@@ -27,6 +27,7 @@ export default function Sidebar ({title, description, category, author}) {
               </div>
             </div>
 
+            {/*
             <div className="border-border bg-card mb-6 overflow-hidden rounded-lg border shadow-sm">
               <div className="border-border bg-muted/50 border-b px-5 py-4">
                 <h3 className="flex items-center text-sm font-semibold">
@@ -91,6 +92,7 @@ export default function Sidebar ({title, description, category, author}) {
                 </ul>
               </div>
             </div>
+            */}
           </aside>
         </div>
     )

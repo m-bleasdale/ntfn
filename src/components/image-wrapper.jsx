@@ -7,6 +7,7 @@ import {
 const creditLink = {
 	"CC BY-SA 4.0": <a className="underline" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>,
     "CC BY-SA 2.0": <a className="underline" href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>,
+    "CC 3.0": <a className="underline" href="https://creativecommons.org/licenses/by/3.0/">CC 3.0</a>,
 }
 
 export default function ImageWrapper ({children, credit, type}) {

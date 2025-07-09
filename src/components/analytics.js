@@ -1,0 +1,33 @@
+'use client';
+
+import { useEffect } from "react";
+
+export default function Analytics () {
+    useEffect(() => {
+        if (window.location.hostname === 'localhost') return;
+
+        const gaScript = document.createElement('script');
+        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-4CBE8EKD6F';
+        gaScript.async = true;
+        document.head.appendChild(gaScript);
+
+        const inlineScript = document.createElement('script');
+        inlineScript.innerHTML = `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-4CBE8EKD6F');
+            `;
+        document.head.appendChild(inlineScript);
+
+        const cookieBot = document.createElement('script');
+        cookieBot.id = 'Cookiebot';
+        cookieBot.src = 'https://consent.cookiebot.com/uc.js';
+        cookieBot.type = 'text/javascript';
+        cookieBot.setAttribute('data-cbid', '[redacted]');
+        cookieBot.async = true;
+        document.head.appendChild(cookieBot);
+    }, []);
+
+    return null;
+}
