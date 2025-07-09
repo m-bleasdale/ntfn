@@ -28,11 +28,11 @@ const Footer = ({
       title: "Social",
       links: [
         { text: "Instagram", url: "https://www.instagram.com/ntfn.co.uk/" },
-        { text: "LinkedIn", url: "https://www.tiktok.com/@ntfn.co.uk" },
+        { text: "TikTok", url: "https://www.tiktok.com/@ntfn.co.uk" },
       ],
     },
   ],
-  copyright = "© 2024 No Time For News. All rights reserved.",
+  copyright = "© 2025 No Time For News. All rights reserved.",
   bottomLinks = [
     { text: "Terms and Conditions", url: "/terms" },
     { text: "Privacy Policy", url: "/privacy" },

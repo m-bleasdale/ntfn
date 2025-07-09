@@ -1,4 +1,5 @@
 import Header from "@/components/header"
+import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 
 export default function NotFound () {
@@ -13,6 +14,7 @@ export default function NotFound () {
                     <a href="/contact"><Button variant="outline">Contact</Button></a>
                 </div>       
             </main>
+            <Footer />
         </div>
         
     )
