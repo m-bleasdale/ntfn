@@ -9,6 +9,12 @@ import { motion } from "framer-motion";
 export default function BlogPostPreview ({path}) {
     let post;
     if(path === "the-start-of-ntfn") post = TheStartOfNTFN;
+    else return;
+
+    const day = new Date(post.created_at).getUTCDate();
+    const month = new Date(post.created_at).getUTCMonth();
+    const year = new Date(post.created_at).getUTCFullYear();
+
     
 	return (
 
@@ -24,6 +30,7 @@ export default function BlogPostPreview ({path}) {
                     <h2 className="lg:text-2xl text-xl font-semibold">{post.title}</h2>
                     <p className='text-md'>{post.description}</p>
                     <p>By {post.author}</p>
+                    <p className='text-muted-foreground'>{day}/{month}/{year}</p>
                 </div>
             </Link>
 
