@@ -3,6 +3,7 @@ import P from '../P';
 export const TheStartOfNTFN = {
     title: "The Start of No Time For News",
     author: "NTFN Team",
+    description: "2 days ago, the 8th July 2025, we published our first article under the banner of our new news organisation No Time For News, or NTFN for short. This is a very exciting moment for our organisation.",
     created_at: new Date(2025, 7, 11),
     content:
         <div>
