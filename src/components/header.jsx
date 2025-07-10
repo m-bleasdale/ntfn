@@ -62,7 +62,7 @@ export default function Header ({
           description:
             "Take a look at the most recent things we've been working on.",
           icon: <Newspaper className="size-5 shrink-0" />,
-          url: "#",
+          url: "/blog",
         }
       ],
     }
