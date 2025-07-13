@@ -7,6 +7,26 @@ import Header from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Community } from '@/components/community';
 
+export async function generateMetadata({ params }) {
+    const { slug } = await params;
+
+    let post;
+    if(slug[0] === "the-start-of-ntfn") post = TheStartOfNTFN;
+    else return;
+
+    return {
+        title: post.title,
+        description: post.description,
+        openGraph: {
+            title: post.title,
+            description: post.description,
+            images: [post.coverImage],
+            publishedTime: post.created_at
+        }
+    }
+
+}
+
 export default async function Blog({ params }) {
     const { slug } = await params;
 

@@ -7,6 +7,29 @@ import Notice from '@/components/notice';
 import Sidebar from "@/components/sidebar";
 import { Footer } from '@/components/footer';
 
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+
+    try {
+        const { frontmatter } = await getPostContent(slug);
+
+        return {
+            title: frontmatter.title,
+            description: frontmatter.description,
+            openGraph: {
+                title: frontmatter.title,
+                description: frontmatter.description,
+                images: [frontmatter.coverImage],
+                publishedTime: frontmatter.created_at
+            }
+        }
+    } catch (error) {
+        throw error;
+    }
+
+}
+
+
 export default async function Page({ params }) {
     const { slug } = await params;
 

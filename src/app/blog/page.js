@@ -5,6 +5,17 @@ import BlogPostPreview from './blog-post-preview';
 import { Footer } from "@/components/footer";
 import { Community } from "@/components/community";
 
+export async function generateMetadata() {
+    return {
+        title: "Blog - NTFN",
+        description: "News About No Time For News: student-led, impartial, no-nonsense news.",
+        openGraph: {
+            title: "Blog - NTFN",
+            description: "News About No Time For News: student-led, impartial, no-nonsense news.",
+        }
+    }
+}
+
 export default function Home() {
 	return (
 		<div className="flex flex-col items-center min-h-screen pb-20 lg:gap-16 gap-8 p-8 sm:px-20 font-[family-name:var(--font-geist-sans)]">

@@ -1,10 +1,18 @@
 import { Community } from "@/components/community";
 import { Footer } from "@/components/footer";
 import Header from "@/components/header"
-import Hero from "@/components/hero"
-import TeamMember from "@/components/team-member";
 
-import { Phone } from "lucide-react";
+export async function generateMetadata() {
+    return {
+        title: "Contact - NTFN",
+        description: "Contact No Time For News at contact@ntfn.co.uk",
+        openGraph: {
+            title: "Contact - NTFN",
+            description: "Contact No Time For News at contact@ntfn.co.uk",
+        }
+    }
+}
+
 
 export default function Contact () {
     return (

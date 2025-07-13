@@ -5,6 +5,18 @@ import TeamMember from "@/components/team-member";
 
 import { HeartHandshake } from "lucide-react";
 
+export async function generateMetadata() {
+    return {
+        title: "About Us - NTFN",
+        description: "About No Time For News: student-led, impartial, no-nonsense news.",
+        openGraph: {
+            title: "About Us - NTFN",
+            description: "About No Time For News: student-led, impartial, no-nonsense news.",
+        }
+    }
+}
+
+
 export default function About () {
     return (
         <div className="flex flex-col items-center min-h-screen pb-20 lg:gap-12 gap-8 p-8 sm:px-20 font-[family-name:var(--font-geist-sans)]">
