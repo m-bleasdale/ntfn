@@ -1,62 +1,15 @@
 'use client';
 
 import Script from 'next/script';
-import { useEffect } from 'react';
 
 const Analytics = () => {
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    if (window.location.hostname === 'localhost') return;
+  if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
+    return null; // Don't load anything on localhost
+  }
 
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      window.dataLayer.push(arguments);
-    }
-
-    gtag('consent', 'default', {
-      ad_storage: 'denied',
-      analytics_storage: 'denied',
-      wait_for_update: 500,
-    });
-
-    // CookieConsentDeclaration listener
-    const handleConsent = () => {
-      console.log('CookieConsentDeclaration event fired');
-      console.log('Cookiebot consent object:', window.Cookiebot?.consents);
-
-      if (
-        window.Cookiebot?.consents?.given?.statistics
-      ) {
-        console.log('Consent granted — loading GA');
-
-        gtag('consent', 'update', {
-          analytics_storage: 'granted',
-        });
-
-        const gaScript = document.createElement('script');
-        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-4CBE8EKD6F';
-        gaScript.async = true;
-        document.head.appendChild(gaScript);
-
-        gtag('js', new Date());
-        gtag('config', 'G-4CBE8EKD6F', {
-          anonymize_ip: true,
-        });
-      } else {
-        console.log('Consent not granted for statistics.');
-      }
-    };
-
-    window.addEventListener('CookieConsentDeclaration', handleConsent);
-
-    return () => {
-      window.removeEventListener('CookieConsentDeclaration', handleConsent);
-    };
-  }, []);
-
-  // Cookiebot script in head using <Script />
   return (
     <>
+      {/* Cookiebot script: must load before anything else */}
       <Script
         id="cookiebot"
         src="https://consent.cookiebot.com/uc.js"
@@ -66,6 +19,49 @@ const Analytics = () => {
         data-consentmode="test"
         type="text/javascript"
       />
+
+      {/* gtag init script: sets default to denied */}
+      <Script id="gtag-init" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('consent', 'default', {
+            ad_storage: 'denied',
+            analytics_storage: 'denied',
+            wait_for_update: 500
+          });
+        `}
+      </Script>
+
+      {/* Consent listener & GA load */}
+      <Script id="ga-consent-handler" strategy="afterInteractive">
+        {`
+          window.addEventListener('CookieConsentDeclaration', function () {
+            if (
+              window.Cookiebot &&
+              window.Cookiebot.consents &&
+              window.Cookiebot.consents.given &&
+              window.Cookiebot.consents.given.statistics
+            ) {
+              console.log('[Cookiebot] Consent for statistics granted. Loading GA...');
+              
+              gtag('consent', 'update', {
+                analytics_storage: 'granted'
+              });
+
+              var gaScript = document.createElement('script');
+              gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-4CBE8EKD6F";
+              gaScript.async = true;
+              document.head.appendChild(gaScript);
+
+              gtag('js', new Date());
+              gtag('config', 'G-4CBE8EKD6F', { anonymize_ip: true });
+            } else {
+              console.log('[Cookiebot] Consent not granted for statistics.');
+            }
+          });
+        `}
+      </Script>
     </>
   );
 };
