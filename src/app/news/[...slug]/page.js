@@ -46,15 +46,15 @@ export default async function Page({ params }) {
 
                 <div className="container flex flex-col md:grid gap-12 md:grid-cols-10 md:gap-8">
 
-                    <Sidebar title={frontmatter.title} description={frontmatter.description} category={frontmatter.category} author={frontmatter.author}/>
+                    <Sidebar title={frontmatter.title} description={frontmatter.description} category={frontmatter.category} type={frontmatter.type} author={frontmatter.author}/>
                 
                     <div className="flex w-full flex-col items-center lg:gap-12 lg:pb-20 gap-8 w-full sm:px-20 md:col-span-6 md:col-start-3 lg:col-start-3">
                         {frontmatter.notice && <Notice code={frontmatter.notice} />}
 
                         <div className='flex flex-col w-full gap-5'>
                             <h1 className='text-4xl font-semibold'>{frontmatter.title}</h1>
-                            <h2 className='text-lg'>By {frontmatter.author}</h2>
-                            <h2>Created {day}/{month}/{year}</h2>
+                            {frontmatter.author && <h2 className='text-lg'>By {frontmatter.author}</h2>}
+                            <h2>Created {day}/{month + 1}/{year}</h2>
                         </div>
 
                         <div>

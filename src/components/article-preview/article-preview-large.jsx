@@ -5,7 +5,8 @@ import * as motion from "motion/react-client"
 
 import ImageWrapper from "@/components/image-wrapper";
 
-import { Badge } from "@/components/ui/badge"
+import ArticleType from "@/components/article-preview/article-type";
+import { Badge } from "@/components/ui/badge";
 
 export default function ArticlePreviewLarge ({path}) {
 	const content = getPostPreview(path);
@@ -21,8 +22,11 @@ export default function ArticlePreviewLarge ({path}) {
 				<div className='lg:pt-10 pt-5 flex flex-col gap-5'>
 					<h2 className="group-hover:underline text-4xl font-semibold">{content.title}</h2>
 					<p className='group-hover:underline text-lg'>{content.description}</p>
-					<Badge variant="default">{content.category}</Badge>
-					<p className='group-hover:no-underline'>By {content.author}</p>
+					<div className='flex flex-row gap-2'>
+						{content.type && <ArticleType type={content.type} />}
+						{content.category && <Badge variant="outline">{content.category}</Badge>}
+					</div>
+					{content.author && <p className='group-hover:no-underline'>By {content.author}</p>}
 				</div>
 			</Link>
 		</motion.div>

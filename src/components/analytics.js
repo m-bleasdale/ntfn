@@ -7,6 +7,16 @@ export default function Analytics () {
         //Skip tracking if on localhost
         if (window.location.hostname === 'localhost') return;
 
+        const Cookiebot = document.createElement('script');
+        Cookiebot.id = 'Cookiebot';
+        Cookiebot.src = 'https://consent.cookiebot.com/uc.js';
+        Cookiebot.setAttribute('data-cbid', 'd368d88e-41e7-4efe-ac83-8dd9b3ffcc2e');
+        Cookiebot.setAttribute('data-blockingmode', 'auto');
+        Cookiebot.type = 'text/javascript';
+        Cookiebot.async = true;
+        document.head.appendChild(Cookiebot);
+        
+
         //Sets all consent categories to denied by default
         const consentScript = document.createElement('script');
         consentScript.setAttribute('data-cookieconsent', 'ignore');

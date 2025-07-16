@@ -2,7 +2,9 @@ import { Book, Download, Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
-export default function Sidebar ({title, description, category, author}) {
+import ArticleType from "@/components/article-preview/article-type";
+
+export default function Sidebar ({title, description, category, type, author}) {
     return (
         <div className="order-last md:order-none md:col-span-2 lg:col-span-2 lg:mt-40 sticky">
           <aside className="flex flex-col gap-2">
@@ -20,10 +22,15 @@ export default function Sidebar ({title, description, category, author}) {
                 <p className="text-foreground gap-4 text-md leading-snug">
                     {description}
                 </p>
-                <Badge variant="default">{category}</Badge>
-                <p className="text-foreground gap-4 text-md leading-snug">
-                    By {author}
-                </p>
+                <div className='flex flex-row gap-2'>
+                    {type && <ArticleType type={type} />}
+                    {category && <Badge variant="outline">{category}</Badge>}
+                </div>
+                {author && 
+                  <p className="text-foreground gap-4 text-md leading-snug">
+                      By {author}
+                  </p>
+                }
               </div>
             </div>
 
