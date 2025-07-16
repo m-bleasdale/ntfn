@@ -10,26 +10,27 @@ const Analytics = () => {
 
     if (isLocalhost) return;
 
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-        window.dataLayer.push(arguments);
-    }
-    gtag('consent', 'default', {
-        ad_storage: 'denied',
-        analytics_storage: 'denied',
-        wait_for_update: 500,
-    });
-
-
     // Add Cookiebot script
     const cookiebotScript = document.createElement('script');
     cookiebotScript.id = 'Cookiebot';
     cookiebotScript.src = 'https://consent.cookiebot.com/uc.js';
     cookiebotScript.setAttribute('data-cbid', 'd368d88e-41e7-4efe-ac83-8dd9b3ffcc2e');
-    cookiebotScript.setAttribute('data-blockingmode', 'auto');
+    cookiebotScript.setAttribute('data-blockingmode', 'auto'); // Blocks cookies until consent
+    cookiebotScript.setAttribute('data-consentmode', 'test'); // Force testing banner (remove when live)
     cookiebotScript.type = 'text/javascript';
     cookiebotScript.async = true;
     document.head.appendChild(cookiebotScript);
+
+    // Initialize GA consent with "denied" state for analytics_storage
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      analytics_storage: 'denied',
+      wait_for_update: 500,
+    });
 
     // Add GA4 only if consent is given (via Cookiebot callback)
     window.addEventListener('CookieConsentDeclaration', () => {
@@ -39,7 +40,7 @@ const Analytics = () => {
         window.Cookiebot.consents.given &&
         window.Cookiebot.consents.given.statistics
       ) {
-
+        // Grant GA consent after user accepts analytics cookies
         gtag('consent', 'update', {
           analytics_storage: 'granted',
         });
@@ -50,12 +51,7 @@ const Analytics = () => {
         gaScript.async = true;
         document.head.appendChild(gaScript);
 
-        // gtag config
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-          window.dataLayer.push(arguments);
-        }
-
+        // Configure GA with anonymized IP
         gtag('js', new Date());
         gtag('config', 'G-4CBE8EKD6F', {
           anonymize_ip: true,
