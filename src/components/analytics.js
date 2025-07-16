@@ -10,6 +10,17 @@ const Analytics = () => {
 
     if (isLocalhost) return;
 
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        window.dataLayer.push(arguments);
+    }
+    gtag('consent', 'default', {
+        ad_storage: 'denied',
+        analytics_storage: 'denied',
+        wait_for_update: 500,
+    });
+
+
     // Add Cookiebot script
     const cookiebotScript = document.createElement('script');
     cookiebotScript.id = 'Cookiebot';
