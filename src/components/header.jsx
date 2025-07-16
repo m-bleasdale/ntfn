@@ -71,7 +71,7 @@ export default function Header ({
 }) {
   return (
     <header className="py-4 h-auto w-full flex justify-center lg:border-y border-b border-solid">
-      <div className="container lg:w-[60%] w-full">
+      <div className="container 2xl:w-[60%] w-full">
         {/* Desktop Menu */}
         <nav className="hidden justify-between items-center lg:flex">
             <div className="flex justify-between items-center gap-15">

@@ -44,11 +44,11 @@ export default async function Page({ params }) {
             <div className="flex flex-col items-center min-h-screen pb-20 lg:gap-12 gap-8 p-8 sm:px-20 font-[family-name:var(--font-geist-sans)]">
                 <Header />
 
-                <div className="container flex flex-col md:grid gap-12 md:grid-cols-10 md:gap-8">
+                <div className="container flex flex-col md:flex-col-reverse xl:grid gap-12 xl:grid-cols-10 xl:gap-8">
 
                     <Sidebar title={frontmatter.title} description={frontmatter.description} category={frontmatter.category} type={frontmatter.type} author={frontmatter.author}/>
                 
-                    <div className="flex w-full flex-col items-center lg:gap-12 lg:pb-20 gap-8 w-full sm:px-20 md:col-span-6 md:col-start-3 lg:col-start-3">
+                    <div className="flex w-full flex-col items-center lg:gap-12 lg:pb-20 gap-8 w-full lg:px-20 md:col-span-6 md:col-start-3 lg:col-start-3">
                         {frontmatter.notice && <Notice code={frontmatter.notice} />}
 
                         <div className='flex flex-col w-full gap-5'>
