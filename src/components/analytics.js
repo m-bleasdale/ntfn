@@ -10,16 +10,19 @@ const Analytics = () => {
 
     if (isLocalhost) return;
 
-    // Add Cookiebot script
+    // Add Cookiebot script with test mode
     const cookiebotScript = document.createElement('script');
     cookiebotScript.id = 'Cookiebot';
     cookiebotScript.src = 'https://consent.cookiebot.com/uc.js';
     cookiebotScript.setAttribute('data-cbid', 'd368d88e-41e7-4efe-ac83-8dd9b3ffcc2e');
     cookiebotScript.setAttribute('data-blockingmode', 'auto'); // Blocks cookies until consent
-    cookiebotScript.setAttribute('data-consentmode', 'test'); // Force testing banner (remove when live)
+    cookiebotScript.setAttribute('data-consentmode', 'test'); // Force showing the banner in all regions (testing mode)
     cookiebotScript.type = 'text/javascript';
     cookiebotScript.async = true;
     document.head.appendChild(cookiebotScript);
+
+    // Log to confirm the script is injected
+    console.log('Cookiebot script injected:', cookiebotScript);
 
     // Initialize GA consent with "denied" state for analytics_storage
     window.dataLayer = window.dataLayer || [];
@@ -32,14 +35,19 @@ const Analytics = () => {
       wait_for_update: 500,
     });
 
-    // Add GA4 only if consent is given (via Cookiebot callback)
+    // Wait for Cookiebot consent event
     window.addEventListener('CookieConsentDeclaration', () => {
+      // Log Cookiebot state
+      console.log('Cookiebot consent event triggered.');
+
       if (
         window.Cookiebot &&
         window.Cookiebot.consents &&
         window.Cookiebot.consents.given &&
         window.Cookiebot.consents.given.statistics
       ) {
+        console.log('Consent for analytics granted');
+
         // Grant GA consent after user accepts analytics cookies
         gtag('consent', 'update', {
           analytics_storage: 'granted',
@@ -56,6 +64,8 @@ const Analytics = () => {
         gtag('config', 'G-4CBE8EKD6F', {
           anonymize_ip: true,
         });
+      } else {
+        console.log('Consent for analytics not granted.');
       }
     });
   }, []);
