@@ -21,7 +21,7 @@ export default function ArticlePreviewSmall ({path}) {
             <Link href={`/news/${content.path}`} className="flex flex-col w-[full]">
                 <div className='container'>
                     <ImageWrapper credit={content.cover_credit} type={content.cover_credit_type}>
-                        <img src={content.cover} alt={content.cover_alt} className='w-full lg:h-55 h-50 rounded-lg object-cover hover:cursor-pointer'/>
+                        <img src={content.cover} alt={content.cover_alt} className='w-full lg:h-55 md:h-55 h-50 rounded-lg object-cover hover:cursor-pointer'/>
                     </ImageWrapper>
                 </div>
                 <div className='lg:pt-5 pt-2 flex flex-col gap-3'>

@@ -49,7 +49,7 @@ export default async function Blog({ params }) {
                     <Title 
                         title={post.title}
                         author={post.author}
-                        date={`${day}/${month}/${year}`}
+                        date={`${day}/${month + 1}/${year}`}
                     />
 
                     
