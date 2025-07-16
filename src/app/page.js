@@ -13,7 +13,7 @@ export default function Home() {
 			<main className="flex flex-col gap-[50px] items-center justify-center sm:items-start sm:w-full lg:w-[95%] xl:w-[90%] 2xl:w-[70%]">
 				<ArticlePreviewLarge path="2025/07/afghan-data-leak"/>
 
-				<div className="grid lg:grid-rows-1 lg:grid-cols-3 md:grid-cols-3 sm:grid-rows-3 sm:grid-cols-1 md:gap-10 gap-15">
+				<div className="grid md:grid-rows-1 md:grid-cols-3 sm:grid-rows-3 sm:grid-cols-1 md:gap-10 gap-15">
 					<ArticlePreviewSmall path="can-jury-free-trials-save-uk-courts"/>
 					<ArticlePreviewSmall path="what-went-wrong-with-kier-starmers-welfare-reform"/>
 					<ArticlePreviewSmall path="2025/07/uk-inflation-surge"/>
@@ -23,7 +23,7 @@ export default function Home() {
 
 				<ArticlePreviewLarge path="2025/07/thames-water-hosepipe-ban"/>
 
-				<div className="grid lg:grid-rows-1 lg:grid-cols-3 sm:grid-rows-3 sm:grid-cols-1 gap-15">
+				<div className="grid md:grid-rows-1 md:grid-cols-3 sm:grid-rows-3 sm:grid-cols-1 md:gap-10 gap-15">
 					<ArticlePreviewSmall path="2025/07/immunisation-crisis-2024"/>
 					<ArticlePreviewSmall path="2025/07/uk-financial-services-reforms"/>
 				</div>
