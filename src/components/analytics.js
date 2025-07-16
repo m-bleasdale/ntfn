@@ -39,6 +39,11 @@ const Analytics = () => {
         window.Cookiebot.consents.given &&
         window.Cookiebot.consents.given.statistics
       ) {
+
+        gtag('consent', 'update', {
+          analytics_storage: 'granted',
+        });
+
         // Inject GA4 script
         const gaScript = document.createElement('script');
         gaScript.src = `https://www.googletagmanager.com/gtag/js?id=G-4CBE8EKD6F`;
