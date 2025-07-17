@@ -25,9 +25,10 @@ export default function Home() {
 
 				<div className="grid md:grid-rows-1 md:grid-cols-3 sm:grid-rows-3 sm:grid-cols-1 md:gap-10 gap-15">
 					<ArticlePreviewSmall path="2025/07/immunisation-crisis-2024"/>
-					<ArticlePreviewSmall path="2025/07/uk-financial-services-reforms"/>
+					<ArticlePreviewSmall path="2025/07/uk-unemployment-surge"/>
 					<ArticlePreviewSmall path="2025/07/uk-inflation-surge"/>
 				</div>
+
 
 				<div className="w-full flex justify-center flex-col lg:gap-15 gap-12 lg:mb-20 mb-15 lg:mt-20 mt-15">
 					<Community />
