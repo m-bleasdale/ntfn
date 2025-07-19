@@ -54,7 +54,7 @@ export default async function Page({ params }) {
                         <div className='flex flex-col w-full gap-5'>
                             <h1 className='text-4xl font-semibold'>{frontmatter.title}</h1>
                             {frontmatter.author && <h2 className='text-lg'>By {frontmatter.author}</h2>}
-                            <h2>Created {day}/{month + 1}/{year}</h2>
+                            <h2>Written {day}/{month + 1}/{year}</h2>
                         </div>
 
                         <div>

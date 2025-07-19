@@ -11,22 +11,22 @@ export default function Home() {
 		<div className="flex flex-col items-center min-h-screen pb-20 lg:gap-16 gap-8 p-8 sm:px-20 font-[family-name:var(--font-geist-sans)]">
 			<Header />
 			<main className="flex flex-col gap-[50px] items-center justify-center sm:items-start sm:w-full lg:w-[95%] xl:w-[90%] 2xl:w-[70%]">
-				<ArticlePreviewLarge path="2025/07/voting-age-16"/>
+				<ArticlePreviewLarge path="2025/07/trump-and-epstein"/>
 				
 				<div className="grid md:grid-rows-1 md:grid-cols-3 sm:grid-rows-3 sm:grid-cols-1 md:gap-10 gap-15">
+					<ArticlePreviewSmall path="2025/07/voting-age-16"/>
 					<ArticlePreviewSmall path="2025/07/afghan-data-leak"/>
-					<ArticlePreviewSmall path="can-jury-free-trials-save-uk-courts"/>
-					<ArticlePreviewSmall path="what-went-wrong-with-kier-starmers-welfare-reform"/>					
+					<ArticlePreviewSmall path="can-jury-free-trials-save-uk-courts"/>					
 				</div>
 
-				<h2 className="text-5xl font-semibold">Top Stories</h2>
+				<h2 className="text-5xl font-semibold">More News</h2>
 
-				<ArticlePreviewLarge path="2025/07/thames-water-hosepipe-ban"/>
+				<ArticlePreviewLarge path="what-went-wrong-with-kier-starmers-welfare-reform"/>
 
 				<div className="grid md:grid-rows-1 md:grid-cols-3 sm:grid-rows-3 sm:grid-cols-1 md:gap-10 gap-15">
-					<ArticlePreviewSmall path="2025/07/immunisation-crisis-2024"/>
-					<ArticlePreviewSmall path="2025/07/uk-unemployment-surge"/>
 					<ArticlePreviewSmall path="2025/07/uk-inflation-surge"/>
+					<ArticlePreviewSmall path="2025/07/uk-electric-car-grant"/>
+					<ArticlePreviewSmall path="2025/07/uk-financial-services-reforms"/>
 				</div>
 
 
