@@ -1,10 +1,30 @@
-import Image from "next/image";
 import Header from "@/components/header";
 import ArticlePreviewLarge from "@/components/article-preview/article-preview-large";
 import ArticlePreviewSmall from "@/components/article-preview/article-preview-small";
 
 import { Footer } from "@/components/footer";
 import { Community } from "@/components/community";
+
+export const metadata = {
+  title: "No Time For News",
+  description: "No Time For News is an independent, student-led UK news organisation delivering concise, factual, and bias-free reporting across politics, world affairs, and more.",
+  openGraph: {
+    title: "No Time For News",
+    description: "Independent, student-led UK news. Factual. Concise. Bias-free.",
+    url: "https://www.ntfn.co.uk",
+    images: ["https://www.ntfn.co.uk/NTFNFavicon.png"], // replace if you have a better brand image
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "No Time For News",
+    description: "Independent, student-led UK news. Factual. Concise. Bias-free.",
+    images: ["https://www.ntfn.co.uk/NTFNFavicon.png"],
+  },
+  alternates: {
+    canonical: "https://www.ntfn.co.uk",
+  },
+};
+
 
 export default function Home() {
 	return (

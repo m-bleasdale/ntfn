@@ -5,14 +5,12 @@ import TeamMember from "@/components/team-member";
 
 import { Phone } from "lucide-react";
 
-export async function generateMetadata() {
-    return {
-        title: "Get Involved - NTFN",
+export const metadata = {
+    title: "Get Involved - No Time For News",
+    description: "Get Involved with No Time For News: student-led, impartial, no-nonsense news.",
+    openGraph: {
+        title: "Get Involved - No Time For News",
         description: "Get Involved with No Time For News: student-led, impartial, no-nonsense news.",
-        openGraph: {
-            title: "Get Involved - NTFN",
-            description: "Get Involved with No Time For News: student-led, impartial, no-nonsense news.",
-        }
     }
 }
 

@@ -5,14 +5,12 @@ import TeamMember from "@/components/team-member";
 
 import { HeartHandshake } from "lucide-react";
 
-export async function generateMetadata() {
-    return {
+export const metadata = {
+    title: "About Us - No Time For news",
+    description: "About No Time For News: student-led, impartial, no-nonsense news.",
+    openGraph: {
         title: "About Us - NTFN",
         description: "About No Time For News: student-led, impartial, no-nonsense news.",
-        openGraph: {
-            title: "About Us - NTFN",
-            description: "About No Time For News: student-led, impartial, no-nonsense news.",
-        }
     }
 }
 

@@ -5,15 +5,13 @@ import BlogPostPreview from './blog-post-preview';
 import { Footer } from "@/components/footer";
 import { Community } from "@/components/community";
 
-export async function generateMetadata() {
-    return {
-        title: "Blog - NTFN",
-        description: "News About No Time For News: student-led, impartial, no-nonsense news.",
-        openGraph: {
-            title: "Blog - NTFN",
-            description: "News About No Time For News: student-led, impartial, no-nonsense news.",
-        }
-    }
+export const metadata = {
+	title: "Blog - No Time For News",
+	description: "News About No Time For News: student-led, impartial, no-nonsense news.",
+	openGraph: {
+		title: "Blog - No Time For News",
+		description: "News About No Time For News: student-led, impartial, no-nonsense news.",
+	}
 }
 
 export default function Home() {

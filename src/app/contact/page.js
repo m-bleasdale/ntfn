@@ -2,14 +2,12 @@ import { Community } from "@/components/community";
 import { Footer } from "@/components/footer";
 import Header from "@/components/header"
 
-export async function generateMetadata() {
-    return {
-        title: "Contact - NTFN",
+export const metadata = {
+    title: "Contact - No Time For News",
+    description: "Contact No Time For News at contact@ntfn.co.uk",
+    openGraph: {
+        title: "Contact - No Time For News",
         description: "Contact No Time For News at contact@ntfn.co.uk",
-        openGraph: {
-            title: "Contact - NTFN",
-            description: "Contact No Time For News at contact@ntfn.co.uk",
-        }
     }
 }
 

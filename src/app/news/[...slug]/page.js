@@ -19,8 +19,19 @@ export async function generateMetadata({ params }) {
             openGraph: {
                 title: frontmatter.title,
                 description: frontmatter.description,
+                type: 'article',
+                url: `https://www.ntfn.co.uk/news/${slug}`,
                 images: [frontmatter.coverImage],
                 publishedTime: frontmatter.created_at
+            },
+            twitter: {
+                card: 'summary_large_image',
+                title: frontmatter.title,
+                description: frontmatter.description,
+                images: [frontmatter.coverImage]
+            },
+            alternates: {
+                canonical: `https://www.ntfn.co.uk/news/${slug}`
             }
         }
     } catch (error) {
@@ -41,10 +52,10 @@ export default async function Page({ params }) {
         const year = new Date(frontmatter.created_at).getUTCFullYear();
 
         return (
-            <div className="flex flex-col items-center min-h-screen pb-20 lg:gap-12 gap-8 p-8 sm:px-20 font-[family-name:var(--font-geist-sans)]">
+            <main className="flex flex-col items-center min-h-screen pb-20 lg:gap-12 gap-8 p-8 sm:px-20 font-[family-name:var(--font-geist-sans)]">
                 <Header />
 
-                <div className="container flex flex-col md:flex-col-reverse xl:grid gap-12 xl:grid-cols-10 xl:gap-8">
+                <article className="container flex flex-col md:flex-col-reverse xl:grid gap-12 xl:grid-cols-10 xl:gap-8">
 
                     <Sidebar title={frontmatter.title} description={frontmatter.description} category={frontmatter.category} type={frontmatter.type} author={frontmatter.author}/>
                 
@@ -88,10 +99,42 @@ export default async function Page({ params }) {
                         </div>
                     </div>
 
-                </div>
+                </article>
 
                 <Footer />
-            </div>
+
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "NewsArticle",
+                        "headline": frontmatter.title,
+                        "description": frontmatter.description,
+                        "image": [frontmatter.coverImage],
+                        "datePublished": frontmatter.created_at,
+                        "isAccessibleForFree": true,
+                        "author": {
+                            "@type": "Person",
+                            "name": "No Time For News",
+                        },
+                        "publisher": {
+                            "@type": "Organization",
+                            "name": "No Time For News",
+                            "logo": {
+                            "@type": "ImageObject",
+                            "url": "https://www.ntfn.co.uk/NTFNFavicon.png", // update this
+                            },
+                        },
+                        "mainEntityOfPage": {
+                            "@type": "WebPage",
+                            "@id": `https://www.ntfn.co.uk/news/${slug}`,
+                        },
+                        }),
+                    }}
+                    />
+
+            </main>
 
         )
     } catch (error) {
