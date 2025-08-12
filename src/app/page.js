@@ -31,11 +31,11 @@ export default function Home() {
 		<div className="flex flex-col items-center min-h-screen pb-20 lg:gap-16 gap-8 p-8 sm:px-20 font-[family-name:var(--font-geist-sans)]">
 			<Header />
 			<main className="flex flex-col gap-[50px] items-center justify-center sm:items-start sm:w-full lg:w-[95%] xl:w-[90%] 2xl:w-[70%]">
-				<ArticlePreviewLarge path="britains-online-safety-act"/>
+				<ArticlePreviewLarge path="2025/08/ukraine-ceasefire-talks"/>
 
 				<div className="grid md:grid-rows-1 md:grid-cols-3 sm:grid-rows-3 sm:grid-cols-1 md:gap-10 gap-15">
 					<ArticlePreviewSmall path="2025/08/rachel-reeves-tax"/>
-					<ArticlePreviewSmall path="2025/08/trump-moves-nuclear-submarines"/>
+					<ArticlePreviewSmall path="britains-online-safety-act"/>
 					<ArticlePreviewSmall path="2025/07/russia-earthquake"/>
 				</div>
 
