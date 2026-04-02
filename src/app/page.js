@@ -46,7 +46,7 @@ export default function Home() {
 
 				<div className="grid md:grid-rows-1 md:grid-cols-3 sm:grid-rows-3 sm:grid-cols-1 md:gap-10 gap-15">
 					<ArticlePreviewSmall path="2025/07/trump-and-epstein"/>
-					<ArticlePreviewSmall path="2025/07/uk-electric-car-grant.mdx"/>		
+					<ArticlePreviewSmall path="2025/07/uk-electric-car-grant"/>		
 					<ArticlePreviewSmall path="2025/07/un-warns-of-gaza"/>
 				</div>
 
